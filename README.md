@@ -1,8 +1,8 @@
 ## チャットアプリケーション(REST API ver.)
-### gRPC実装ver.：[go-chat-app-grpc-ver](https://github.com/ta-enomoto/go-chat-app-grpc-ver)
+### ※gRPC実装ver.も作成しています：[go-chat-app-grpc-ver](https://github.com/ta-enomoto/go-chat-app-grpc-ver)
 
 ### Go言語の標準・準標準ライブラリを中心に実装を目指したウェブアプリケーションです。
-ウェブ関連技術について基礎から学ぶため、CRUDなど基礎的な機能から、双方向通信やAPIなど様々な技術が用いられている会員制のチャットアプリケーションを選択しました。Go言語はフレームワークを用いずに実装する部分も多いと耳にし、またウェブアプリケーション構築を基礎から学ぶためにも、APIの実装を除きGo言語の標準・準標準ライブラリのみを使用しての実装を目指して作成しました。
+ウェブ関連技術について基礎から学ぶため、CRUDなど基礎的な機能から、双方向通信やAPIなど様々な技術が用いられている会員制のチャットアプリケーションを選択しました。Go言語はフレームワークを用いずに実装する部分も多いと耳にし、またウェブアプリケーション構築を基礎から学ぶためにも、APIの実装を除きGo言語の標準・準標準ライブラリを使用しての実装を目指して作成しました。
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/63547862/126903232-d31598c8-0f62-46f2-a1e7-6177ecb9625a.gif" width="700px">
