@@ -17,6 +17,7 @@ window.onload = async function() {
   //headersにAPIキー認証用のAuthorizationヘッダーを設定
   const axiosConfig = {
     headers: {
+      //"Access-Control-Allow-Origin": "http://172.25.0.2",
       "Authorization": "apikey",
     }
   };
