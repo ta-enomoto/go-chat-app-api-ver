@@ -37,10 +37,8 @@ func (s *chatapisrvc) APIKeyAuth(ctx context.Context, key string, scheme *securi
 	return ctx, nil
 }
 
-//チャット取得用関数(GET)
 func (s *chatapisrvc) Getchat(ctx context.Context, p *chatapi.GetchatPayload) (res chatapi.GoaChatCollection, err error) {
 
-	//チャットルームDBに接続する
 	dbChtrm, err := sql.Open("mysql", query.ConStrChtrm)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -50,7 +48,6 @@ func (s *chatapisrvc) Getchat(ctx context.Context, p *chatapi.GetchatPayload) (r
 	//リクエストされたルームIDのチャットルームがあるかの確認も兼ねて、ルーム情報をDBから取得する
 	selectedChatroom := query.SelectChatroomById(p.ID, dbChtrm)
 
-	//リクエストされたルームの全チャットを取得する
 	Chats := query.SelectAllChatsById(selectedChatroom.Id, dbChtrm)
 	fmt.Println(p.ID)
 	fmt.Println("successed")
@@ -59,11 +56,9 @@ func (s *chatapisrvc) Getchat(ctx context.Context, p *chatapi.GetchatPayload) (r
 	return Chats, nil
 }
 
-//チャット投稿用関数(POST)
 func (s *chatapisrvc) Postchat(ctx context.Context, p *chatapi.PostchatPayload) (res bool, err error) {
 	s.logger.Print("chatapi.postchat")
 
-	//チャットルームDBに接続する
 	dbChtrm, err := sql.Open("mysql", query.ConStrChtrm)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -74,7 +69,6 @@ func (s *chatapisrvc) Postchat(ctx context.Context, p *chatapi.PostchatPayload) 
 	roomId, _ := strconv.Atoi(p.ID)
 	currentChatroom := query.SelectChatroomById(roomId, dbChtrm)
 
-	//セッションDBに接続する
 	dbSession, err := sql.Open("mysql", query.ConStrSession)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -85,7 +79,6 @@ func (s *chatapisrvc) Postchat(ctx context.Context, p *chatapi.PostchatPayload) 
 	cookie, _ := url.QueryUnescape(p.Cookie)
 	postedUser := query.SelectSessionBySessionId(cookie, dbSession)
 
-	//投稿されたチャットのメタキャラチェック
 	postedChat := regexp.QuoteMeta(p.Chat)
 
 	postDt := time.Now().UTC().Round(time.Second)

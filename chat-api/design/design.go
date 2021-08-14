@@ -20,7 +20,6 @@ var _ = Service("chatapi", func() {
 	cors.Origin("http://172.25.0.2", func() {
 		cors.Headers("Access-Control-Allow-Origin", "Authorization")
 		cors.Methods("GET")
-		cors.MaxAge(600)
 		cors.Credentials()
 	})
 	Method("getchat", func() {
