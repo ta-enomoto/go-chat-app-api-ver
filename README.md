@@ -51,7 +51,7 @@
   - ~~ユーザー管理用とチャット管理用のデータベースの分離~~ **(2021/7/27 DBを別々のコンテナに分離)**
   - チャットルームの作成・削除もAPIで実行
   - ~~gRPCを用いたAPIの実装~~ **(2021/8/9 gRPC実装ver.作成 リンク：[go-chat-app-grpc-ver](https://github.com/ta-enomoto/go-chat-app-grpc-ver))**
-  - testingパッケージとGitHub Actionを用いた、CI/CD
+  - testingパッケージとGitHub Actionを用いた、CI/CD (8/16現在 テスト中)
   - users(ユーザー)テーブルにプライマリキーを追加
   - TypeScriptの適用
   - 新着メッセージの通知
